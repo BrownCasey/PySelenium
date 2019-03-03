@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Getting Started with Selenium</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            article {
+                background-color: #EFEFEF;
+                height: 100%;
+            }
+            body {
+                margin: 0;
+                font-family: 'Montserrat', sans-serif;
+            }
+            header {
+                display: flex;
+            }
+            ul {
+                list-style-type: none;
+            }
+            #header {
+                color: rgb(0, 25, 255);
+                text-align: center;
+                width: 100%;
+            }
+            #header h2 {
+                font-weight: 900;
+            }
+            #index {
+                background-color: #454545;
+                color: #fefefe;
+                float: left;
+                width: 255px;
+            }
+            #nav {
+                background-color: #707070;
+                height: 75px;
+                padding: 10px;
+                width: 255px;
+            }
+            .hidden {
+                display: none;
+                visibility: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="nav">
+                Hamburger
+            </div>
+            <div id="header">
+                <h2>Getting Started with Selenium</h2>
+            </div>
+        </header>
+        <aside id="index">
+            <nav>
+                <ul>
+                    <li id="toggler1">Installation</li>
+                        <ul id="submenuInstall" class="hidden">
+                            <li>Python</li>
+                            <li>Selenium</li>
+                            <li>Chrome Browser</li>
+                        </ul>
+                    <li>Getting Started</li>
+                        <ul>
+                            <li>Import</li>
+                            <li>Open page</li>
+                            <li>Query</li>
+                            <li>Log results</li>
+                        </ul>
+                    <li>Tests</li>
+                        <ul>
+                            <li>Unittest</li>
+                            <li>Arrange</li>
+                            <li>Act</li>
+                            <li>Assert</li>
+                        </ul>
+                </ul>
+            </nav>
+        </aside>
+        <article>
+            <section id="installation">
+                <ol>
+                    <li>Download Python
+                    </li>
+                    <li>Download Selenium
+                    </li>
+                    <li>Download Chrome Browser
+                    </li>
+                </ol>
+            </section>
+            <section id="Getting Started">
+                <ol>
+                    <li>Import
+                    </li>
+                    <li>Open
+                    </li>
+                    <li>Query
+                    </li>
+                    <li>Log
+                    </li>
+                </ol>
+            </section>
+        </article>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <script>$(document).ready(function() {
+            $("#toggler1").click(function(){
+                $("#submenuInstall").toggleClass('hidden');
+            });
+        });
+        </script>
+    </body>
+</html>
