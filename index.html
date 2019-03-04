@@ -89,51 +89,102 @@
                     </p>
                     <p>Install
                     </p>
-                    <p>
-                    </p>
-                    <p>
-                    </p>
                     </div>
                     <div><h3>Download Selenium</h3>
-                    <p>C:\Users\Casey>pip install selenium
-                    <p>
+                    <pre>
+C:\Users\Casey>pip install selenium
 Collecting selenium
-                    </p>
-                    <p>
   Downloading https://files.pythonhosted.org/packages/80/d6/4294f0b4bce4de0abf13e17190289f9d0613b0a44e5dd6a7f5ca98459853/selenium-3.141.0-py2.py3-none-any.whl (904kB)
-                    </p>
     100% |████████████████████████████████| 911kB 2.2MB/s
-                    <p>
 Collecting urllib3 (from selenium)
-                    </p>
-                    <p>
   Downloading https://files.pythonhosted.org/packages/62/00/ee1d7de624db8ba7090d1226aebefab96a2c71cd5cfa7629d6ad3f61b79e/urllib3-1.24.1-py2.py3-none-any.whl (118kB)
-                    </p>
-                    <p>
     100% |████████████████████████████████| 122kB 344kB/s
-                    </p>
-                    <p>
 Installing collected packages: urllib3, selenium
-                    </p>
-                    <p>
 Successfully installed selenium-3.141.0 urllib3-1.24.1
-                    </p>
+                    </pre>
                     </div>
-                    <div>Download Chrome Browser
-                    <p>
+                    <div><h3>Download Chrome Browser</h3>
+                    <p>https://sites.google.com/a/chromium.org/chromedriver/downloads
+                    </p>
+                    <p>Extract the zip. Note the file location. You'll use it in the next step.
                     </p>
                     </div>
                 </div>
             </section>
             <section id="Getting Started">
                 <div>
-                    <div>Import
+                    <div><h3>Import</h3>
+                        <pre>
+    > from selenium import webdriver
+                        </pre>
                     </div>
-                    <div>Open
+                    <div><h3>Open Chrome</h3>
+                        <pre>
+    > driver = webdriver.Chrome("C:\\Users\\Hoopy\\Downloads\\chromedriver_win32\\chromedriver.exe")
+    >driver.get("http://www.caseycodes.com/blog")
+                        </pre>                        
                     </div>
-                    <div>Query
+                    <div><h3>Query</h3>
+                        <pre>
+    > input = driver.find_element_by_xpath("//input[@type='text']")
+    > input.send_keys("essential git")
+    > submit = driver.find_element_by_id("searchsubmit")
+    > submit.click()
+                        </pre>
+                    <div><h3>Scrape Screen</h3>
+                        <pre>
+    > results = driver.find_elements_by_class_name("entry-title")
+    > result0 = results[0].text
+                        </pre>
                     </div>
-                    <div>Log
+                </div>
+            </section>
+            <section id="Tests">
+                <div>
+                    <div><h3>Unittest</h3>
+                        <pre>
+    import unittest
+    import time
+    from selenium import webdriver
+    from selenium.webdriver.common.keys import Keys
+                        </pre>
+                    </div>
+                    <div><h3>Test Object</h3>
+                        <pre>
+    class TestManager(unittest.TestCase):
+    
+        def setUp(self):
+            driver = webdriver.Chrome('C:\Users\Casey\Downloads\chromedriver_win32\chromedriver.exe')
+            driver.get("http://www.Google.com")
+        
+        def tearDown(self):
+            driver.close()
+    class TestTheAnswerToLife(TestManager):
+        def runTest(self):
+                        </pre>
+                    <div><h3>Arrange</h3>
+                        <pre>
+            expected_answer = "42"
+                        </pre>
+                    </div>
+                    <div><h3>Act</h3>
+                        <pre>
+            search_box = driver.find_element_by_xpath("//input[@title='Search']")
+            search_box.send_keys("What is the answer to life the universe and everything?")
+            # this is why you need to import Keys
+            search_box.send_keys(Keys.ENTER)
+            calculator = driver.find_element_by_xpath("//h2[text()='Calculator Result']/following-sibling::div[1]")
+            all_txt = calculator.text
+            lines = all_txt.split('\n')
+            Google_said = lines[1]
+            print Google_said
+            time.sleep(10)
+                        </pre>
+                    </div>
+                    <div><h3>Assert</h3>
+                        <pre>
+            self.assertEqual(expected_answer == Google_said)
+                        </pre>
                     </div>
                 </div>
             </section>
