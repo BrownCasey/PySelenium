@@ -23,9 +23,14 @@
             header {
                 display: flex;
             }
+            nav ul li {
+                font-weight: 700;
+                letter-spacing: 1px;
+                margin: 25px auto 25px auto;
+            }
             section {
                 margin: auto;
-                width: 500px;
+                width: 600px;
             }
             ul {
                 list-style-type: none;
@@ -54,7 +59,7 @@
                 display: none;
                 visibility: hidden;
             }
-            @media screen and (max-width:900px){
+            @media screen and (max-width:1000px){
                 aside, #nav{
                     visibility: hidden;
                     display: none;
@@ -80,21 +85,21 @@
         <aside id="index">
             <nav>
                 <ul>
-                    <li id="toggler1">Installation</li>
+                    <li id="toggleInstall">Installation</li>
                         <ul id="submenuInstall" class="hidden">
                             <li>Python</li>
                             <li>Selenium</li>
                             <li>Chrome Browser</li>
                         </ul>
-                    <li>Getting Started</li>
-                        <ul>
+                    <li id="toggleStart">Getting Started</li>
+                        <ul id="submenuStart" class="hidden">
                             <li>Import</li>
                             <li>Open page</li>
                             <li>Query</li>
                             <li>Log results</li>
                         </ul>
-                    <li>Tests</li>
-                        <ul>
+                    <li id="toggleTests">Tests</li>
+                        <ul id="submenuTests" class="hidden">
                             <li>Unittest</li>
                             <li>Arrange</li>
                             <li>Act</li>
@@ -224,8 +229,14 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
         <script>$(document).ready(function() {
-            $("#toggler1").click(function(){
+            $("#toggleInstall").click(function(){
                 $("#submenuInstall").toggleClass('hidden');
+            });
+            $("#toggleStart").click(function(){
+                $("#submenuStart").toggleClass('hidden');
+            });
+            $("#toggleTest").click(function(){
+                $("#submenuTests").toggleClass('hidden');
             });
         });
         </script>
