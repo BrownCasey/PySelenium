@@ -59,9 +59,15 @@
                 position: fixed;
                 width: 255px;
             }
+            ul ul li {
+                margin: 5px auto 5px auto;
+            }
             .hidden {
                 display: none;
                 visibility: hidden;
+            }
+            .margin-bottom0 {
+                margin-bottom: 0;
             }
             @media screen and (max-width:1000px){
                 aside, #nav{
@@ -91,23 +97,25 @@
                 <ul>
                     <li id="toggleInstall">Installation</li>
                         <ul id="submenuInstall" class="hidden">
-                            <li>Python</li>
-                            <li>Selenium</li>
-                            <li>Chrome Browser</li>
+                            <li><a href="#Python">Python</a></li>
+                            <li><a href="#Selenium">Selenium</a></li>
+                            <li><a href="#Chrome">Chrome Browser</a></li>
                         </ul>
                     <li id="toggleStart">Getting Started</li>
                         <ul id="submenuStart" class="hidden">
-                            <li>Import</li>
-                            <li>Open page</li>
-                            <li>Query</li>
-                            <li>Log results</li>
+                            <li><a href="#Import">Import</a></li>
+                            <li><a href="#Open">Open page</a></li>
+                            <li><a href="#Query">Query</a></li>
+                            <li><a href="#Scrape">Scrape Screen</a></li>
                         </ul>
                     <li id="toggleTests">Tests</li>
                         <ul id="submenuTests" class="hidden">
-                            <li>Unittest</li>
-                            <li>Arrange</li>
-                            <li>Act</li>
-                            <li>Assert</li>
+                            <li><a href="#testDemo.py">TestDemo.py</a></li>
+                            <li><a href="#Class">Test Class</a></li>
+                            <li><a href="#Arrange">Arrange</a></li>
+                            <li><a href="#Act">Act</a></li>
+                            <li><a href="#Assert">Assert</a></li>
+                            <li><a href="#Run">Run It</a></li>
                         </ul>
                 </ul>
             </nav>
@@ -115,13 +123,13 @@
         <article>
             <section id="installation">
                 <div>
-                    <div><h3>Download Python</h3>
+                    <div><h3 id="Python">Download Python</h3>
                     <p><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
                     </p>
                     <p>Install 2.7: Select all Users and Add Python.exe to PATH
                     </p>
                     </div>
-                    <div><h3>Download Selenium</h3>
+                    <div><h3 id="Selenium">Download Selenium</h3>
                     <pre>
 C:\Users\Casey>pip install selenium
 Collecting selenium
@@ -134,7 +142,7 @@ Installing collected packages: urllib3, selenium
 Successfully installed selenium-3.141.0 urllib3-1.24.1
                     </pre>
                     </div>
-                    <div><h3>Download Chrome Driver</h3>
+                    <div><h3 id="Chrome">Download Chrome Driver</h3>
                     <p>
                         <a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">
                         https://sites.google.com/a/chromium.org/chromedriver/downloads
@@ -147,25 +155,25 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
             </section>
             <section id="Getting Started">
                 <div>
-                    <div><h3>Import</h3>
+                    <div><h3 id="Import">Import</h3>
                         <pre>
     > from selenium import webdriver
                         </pre>
                     </div>
-                    <div><h3>Open Chrome</h3>
+                    <div><h3 id="Open">Open Chrome</h3>
                         <pre>
     > driver = webdriver.Chrome("C:\\Your\\Path\\Here\\chromedriver_win32\\chromedriver.exe")
     > driver.get("http://www.caseycodes.com/blog")
                         </pre>
                     </div>
-                    <div><h3>Query</h3>
+                    <div><h3 id="Query">Query</h3>
                         <pre>
     > input = driver.find_element_by_xpath("//input[@type='text']")
     > input.send_keys("essential git")
     > submit = driver.find_element_by_id("searchsubmit")
     > submit.click()
                         </pre>
-                    <div><h3>Scrape Screen</h3>
+                    <div><h3 id="Scrape">Scrape Screen</h3>
                         <pre>
     > results = driver.find_elements_by_class_name("entry-title")
     > result0 = results[0].text
@@ -175,7 +183,7 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
             </section>
             <section id="Tests">
                 <div>
-                    <div><h3>testDemo.py with Unittest</h3>
+                    <div><h3 id="testDemo.py">testDemo.py with Unittest</h3>
                         <pre>
     import unittest
     import time
@@ -183,7 +191,7 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
     from selenium.webdriver.common.keys import Keys
                         </pre>
                     </div>
-                    <div><h3>Test Object</h3>
+                    <div><h3 id="Class">Test Class</h3>
                         <pre>
     class TestManager(unittest.TestCase):
     
@@ -196,12 +204,12 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
     class TestTheAnswerToLife(TestManager):
         def runTest(self):
                         </pre>
-                    <div><h3>Arrange</h3>
+                    <div><h3 id="Arrange">Arrange</h3>
                         <pre>
             expected_answer = "42"
                         </pre>
                     </div>
-                    <div><h3>Act</h3>
+                    <div><h3 id="Act">Act</h3>
                         <pre>
             search_box = driver.find_element_by_xpath("//input[@title='Search']")
             search_box.send_keys("What is the answer to life the universe and everything?")
@@ -215,7 +223,7 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
             time.sleep(10)
                         </pre>
                     </div>
-                    <div><h3>Assert</h3>
+                    <div><h3 id="Assert">Assert</h3>
                         <pre>
             self.assertEqual(expected_answer == Google_said)
                         </pre>
@@ -226,7 +234,7 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
     unittest.main()
                         </pre> 
                     </div>
-                    <div><h3>Run it</h3>
+                    <div><h3 id="Run">Run it</h3>
                         <pre>
     C:\Users\Casey>python TestDemo.py -v
      
@@ -250,12 +258,15 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
         <script>$(document).ready(function() {
             $("#toggleInstall").click(function(){
                 $("#submenuInstall").toggleClass('hidden');
+                $("#toggleInstall").toggleClass('margin-bottom0');
             });
             $("#toggleStart").click(function(){
                 $("#submenuStart").toggleClass('hidden');
+                $("#toggleStart").toggleClass('margin-bottom0');
             });
-            $("#toggleTest").click(function(){
+            $("#toggleTests").click(function(){
                 $("#submenuTests").toggleClass('hidden');
+                $("#toggleTests").toggleClass('margin-bottom0');
             });
         });
         </script>
