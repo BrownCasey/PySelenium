@@ -28,8 +28,9 @@
                 letter-spacing: 1px;
                 margin: 25px auto 25px auto;
             }
-            section {
-                margin: auto;
+            section div {
+                margin: 0 auto 25px auto;
+                padding: 25px 0 0 0;
                 width: 600px;
             }
             ul {
@@ -38,6 +39,7 @@
             }
             #header {
                 color: rgb(0, 25, 255);
+                margin: 0 0 25px 255px;
                 text-align: center;
                 width: 100%;
             }
@@ -114,7 +116,7 @@
             <section id="installation">
                 <div>
                     <div><h3>Download Python</h3>
-                    <p>https://www.python.org/downloads/
+                    <p><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>
                     </p>
                     <p>Install 2.7: Select all Users and Add Python.exe to PATH
                     </p>
@@ -132,8 +134,11 @@ Installing collected packages: urllib3, selenium
 Successfully installed selenium-3.141.0 urllib3-1.24.1
                     </pre>
                     </div>
-                    <div><h3>Download Chrome Browser</h3>
-                    <p>https://sites.google.com/a/chromium.org/chromedriver/downloads
+                    <div><h3>Download Chrome Driver</h3>
+                    <p>
+                        <a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">
+                        https://sites.google.com/a/chromium.org/chromedriver/downloads
+                        </a>
                     </p>
                     <p>Extract the zip. Note the file location. You'll use it in the next step.
                     </p>
@@ -149,9 +154,9 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
                     </div>
                     <div><h3>Open Chrome</h3>
                         <pre>
-    > driver = webdriver.Chrome("C:\\Users\\Hoopy\\Downloads\\chromedriver_win32\\chromedriver.exe")
-    >driver.get("http://www.caseycodes.com/blog")
-                        </pre>                        
+    > driver = webdriver.Chrome("C:\\Your\\Path\\Here\\chromedriver_win32\\chromedriver.exe")
+    > driver.get("http://www.caseycodes.com/blog")
+                        </pre>
                     </div>
                     <div><h3>Query</h3>
                         <pre>
@@ -170,7 +175,7 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
             </section>
             <section id="Tests">
                 <div>
-                    <div><h3>Unittest</h3>
+                    <div><h3>testDemo.py with Unittest</h3>
                         <pre>
     import unittest
     import time
@@ -220,6 +225,18 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
     if __name__ == '__main__':
     unittest.main()
                         </pre> 
+                    </div>
+                    <div><h3>Run it</h3>
+                        <pre>
+    C:\Users\Casey>python TestDemo.py -v
+     
+    runTest (__main__.TestTheAnswerToLife) ... ok
+     
+    ----------------------------------------------------------------------
+    Ran 1 test in 15.080s
+     
+    OK
+                        </pre>
                     </div>
                 </div>
             </section>
