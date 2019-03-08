@@ -8,7 +8,7 @@
         <style>
             article {
                 background-color: #EFEFEF;
-                margin-left: 255px;
+                margin-left: 225px;
             }
             aside {
                 position: fixed;
@@ -31,7 +31,7 @@
             section div {
                 margin: 0 auto 25px auto;
                 padding: 25px 0 0 0;
-                width: 600px;
+                width: 700px;
             }
             ul {
                 list-style-type: none;
@@ -39,7 +39,7 @@
             }
             #header {
                 color: rgb(0, 25, 255);
-                margin: 0 0 25px 255px;
+                margin: 0 0 25px 225px;
                 text-align: center;
                 width: 100%;
             }
@@ -50,14 +50,14 @@
                 background-color: #454545;
                 color: #fefefe;
                 float: left;
-                width: 255px;
+                width: 225px;
             }
             #nav {
                 background-color: #707070;
                 height: 75px;
                 padding: 10px;
                 position: fixed;
-                width: 255px;
+                width: 225px;
             }
             ul ul li {
                 margin: 5px auto 5px auto;
@@ -70,15 +70,18 @@
                 margin-bottom: 0;
             }
             @media screen and (max-width:1000px){
+                article {
+                    margin: auto;
+                }
                 aside, #nav{
                     visibility: hidden;
                     display: none;
                 }
-                article {
-                    margin: auto;
-                }
                 header {
                     display: block;
+                }
+                #header {
+                    margin: auto;
                 }
             }
         </style>
