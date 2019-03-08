@@ -1,0 +1,104 @@
+article {
+    background-color: #EFEFEF;
+    margin-left: 225px;
+}
+aside {
+    position: fixed;
+}
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+header {
+    display: flex;
+}
+html, body, aside {
+    height: 100%;
+}
+nav a, nav a:visited {
+    color: #fefefe;
+}
+nav ul li {
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 25px auto 25px auto;
+}
+section div {
+    margin: 0 auto 25px auto;
+    padding: 25px 0 0 0;
+    width: 700px;
+}
+ul {
+    list-style-type: none;
+    padding: 10px;
+}
+ul ul li {
+    margin: 5px auto 5px auto;
+}
+#hamburger {
+    padding: 6px;
+    width: 45px;
+}
+#header {
+    color: rgb(0, 25, 255);
+    margin: 0 0 25px 225px;
+    text-align: center;
+    width: 100%;
+}
+#header h2 {
+    font-weight: 900;
+}
+#index {
+    background-color: #454545;
+    color: #fefefe;
+    float: left;
+    width: 225px;
+}
+#nav {
+    background-color: #707070;
+    height: 75px;
+    padding: 10px;
+    position: fixed;
+    width: 225px;
+}
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+.margin-bottom0 {
+    margin-bottom: 0;
+}
+.pancake {
+    background-color: #454545;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    height: 5px;
+    transition: transform 0.5s;
+    width: 30px;
+}
+.rotate {
+    transform: rotate(45deg);
+    margin-top: -10px;
+}
+.rotateNeg {
+    transform: rotate(-45deg);
+    margin-top: 10px;
+}
+.underline {
+    text-decoration: underline;
+}
+@media screen and (max-width:1000px){
+    article {
+        margin: auto;
+    }
+    aside, #nav{
+        visibility: hidden;
+        display: none;
+    }
+    header {
+        display: block;
+    }
+    #header {
+        margin: auto;
+    }
+}
