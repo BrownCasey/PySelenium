@@ -6,9 +6,6 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
-            nav a, nav a:visited {
-                color: #fefefe;
-            }
             article {
                 background-color: #EFEFEF;
                 margin-left: 225px;
@@ -16,15 +13,18 @@
             aside {
                 position: fixed;
             }
-            html, body, aside {
-                height: 100%;
-            }
             body {
                 margin: 0;
                 font-family: 'Montserrat', sans-serif;
             }
             header {
                 display: flex;
+            }
+            html, body, aside {
+                height: 100%;
+            }
+            nav a, nav a:visited {
+                color: #fefefe;
             }
             nav ul li {
                 font-weight: 700;
@@ -39,6 +39,13 @@
             ul {
                 list-style-type: none;
                 padding: 10px;
+            }
+            ul ul li {
+                margin: 5px auto 5px auto;
+            }
+            #hamburger {
+                padding: 6px;
+                width: 45px;
             }
             #header {
                 color: rgb(0, 25, 255);
@@ -62,15 +69,28 @@
                 position: fixed;
                 width: 225px;
             }
-            ul ul li {
-                margin: 5px auto 5px auto;
-            }
             .hidden {
                 display: none;
                 visibility: hidden;
             }
             .margin-bottom0 {
                 margin-bottom: 0;
+            }
+            .pancake {
+                background-color: #454545;
+                border-radius: 5px;
+                margin-bottom: 5px;
+                height: 5px;
+                transition: transform 0.5s;
+                width: 30px;
+            }
+            .rotate {
+                transform: rotate(45deg);
+                margin-top: -10px;
+            }
+            .rotateNeg {
+                transform: rotate(-45deg);
+                margin-top: 10px;
             }
             .underline {
                 text-decoration: underline;
@@ -95,7 +115,11 @@
     <body>
         <header>
             <div id="nav">
-                Hamburger
+                <div id="hamburger">
+                    <div class="pancake"></div>
+                    <div class="pancake"></div>
+                    <div class="pancake"></div>
+                </div>
             </div>
             <div id="header">
                 <h2>Getting Started with Selenium</h2>
@@ -280,6 +304,11 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
             $("a").click(function(){
                 $(".underline").removeClass("underline");
                 $(this).addClass('underline');
+            });
+            $("#hamburger").click(function(){
+                $(".pancake:nth-child(2n)").toggleClass("rotate");
+                $(".pancake:nth-child(2n+1)").toggleClass("rotateNeg");
+                $(".pancake:nth-child(3n)").toggleClass("hidden");
             });
         });
         </script>
