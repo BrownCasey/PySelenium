@@ -6,6 +6,9 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <style>
+            nav a, nav a:visited {
+                color: #fefefe;
+            }
             article {
                 background-color: #EFEFEF;
                 margin-left: 225px;
@@ -68,6 +71,9 @@
             }
             .margin-bottom0 {
                 margin-bottom: 0;
+            }
+            .underline {
+                text-decoration: underline;
             }
             @media screen and (max-width:1000px){
                 article {
@@ -270,6 +276,10 @@ Successfully installed selenium-3.141.0 urllib3-1.24.1
             $("#toggleTests").click(function(){
                 $("#submenuTests").toggleClass('hidden');
                 $("#toggleTests").toggleClass('margin-bottom0');
+            });
+            $("a").click(function(){
+                $(".underline").removeClass("underline");
+                $(this).addClass('underline');
             });
         });
         </script>
